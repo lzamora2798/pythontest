@@ -1,3 +1,15 @@
 Flask==1.1.4
 Werkzeug==1.0.1
 markupsafe==2.0.1
+boto3
+coverage~=7.0.5
+pytest-benchmark
+pytest-asyncio
+pytest-cov
+pytest-env
+pytest
+mongomock
+mongomock-motor
+requests
+environs
+mongoengine

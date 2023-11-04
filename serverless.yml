@@ -3,14 +3,18 @@ app: aws-python-flask-api
 service: aws-python-flask-api
 
 frameworkVersion: '3'
+useDotenv: true
 
 custom:
   wsgi:
-    app: app.app
+    app: api.app.app
 
 provider:
   name: aws
   runtime: python3.9
+  environment:
+    WEBSOCKED_URL: ${env:WEBSOCKED_URL}
+    CURRENCY_URL: ${env:CURRENCY_URL}
 
 functions:
   api:
