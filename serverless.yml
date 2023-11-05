@@ -21,7 +21,18 @@ functions:
     handler: wsgi_handler.handler
     events:
       - httpApi: '*'
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - lambda:InvokeFunction
+        Resource:
+          - "arn:aws:lambda:*"
+  cronTask:
+    handler: api.crontask.run
+    timeout: 600
+
 
 plugins:
   - serverless-wsgi
   - serverless-python-requirements
+  - serverless-offline

@@ -17,3 +17,9 @@ class Currency(Document):
     amount = FloatField()
     convert_value = FloatField()
     createdDate = DateTimeField(default=datetime.utcnow)
+
+
+class Measure(Document):
+    temperature = FloatField()
+    humidity = FloatField()
+    createdDate = DateTimeField(default=datetime.utcnow)
